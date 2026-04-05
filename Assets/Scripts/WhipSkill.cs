@@ -1,80 +1,64 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections.Generic;
+
 public class WhipSkill : SkillEffect
 {
     public float sizeMultiplierPerLevel = 0.2f;
-    public float duration = 0.2f;
+    public float duration = 0.3f; // ğŸ’¡ ë§Œë“  ì• ë‹ˆë©”ì´ì…˜ì˜ ì‹¤ì œ ê¸¸ì´ì— ë§ì¶°ì£¼ì„¸ìš”!
 
     private float startTime;
-    private Quaternion startRotation;
-    private Quaternion targetRotation;
     private HashSet<EnemyController> hitEnemies = new HashSet<EnemyController>();
     private Collider2D myCollider;
-
-    [Header("Ã¤Âï °íÀ¯ ¼³Á¤")]
-    public float baseArcAngle = 120f;
+    private SpriteRenderer sr; // ğŸ’¡ ì• ë‹ˆë©”ì´ì…˜ ì¢Œìš° ë°˜ì „ì„ ìœ„í•´ ì¶”ê°€
 
     private void Start()
     {
         myCollider = GetComponent<Collider2D>();
+        // ìì‹(Whip_Slash)ì— ìˆëŠ” SpriteRendererë¥¼ ì°¾ì•„ì˜µë‹ˆë‹¤.
+        sr = GetComponentInChildren<SpriteRenderer>(); 
         startTime = Time.time;
 
-        // 1. °ø¿ë ÁÖ¸Ó´Ï ½ºÅÈ Ã¬±â±â
+        // 1~3. ìŠ¤íƒ¯ ê¸ì–´ì˜¤ê¸° (ìœ ì €ë‹˜ ì½”ë“œ ì™„ë²½í•¨!)
         int myBonusDamage = GameManager.instance.globalBonusDamage;
         float myBonusSize = GameManager.instance.globalBonusSize;
-        float myBonusAngle = GameManager.instance.globalBonusAngle;
         float myBonusKnockback = 0f;
 
-        // 2. ³» ÀÌ¸§Ç¥(skillId)·Î »ç¹°ÇÔ ¿­¾î¼­ ½Ï½Ï ±Ü¾î¿À±â!
         if (GameManager.instance.specificBonusDamage.ContainsKey(skillId))
         {
             myBonusDamage += GameManager.instance.specificBonusDamage[skillId];
             myBonusSize += GameManager.instance.specificBonusSize[skillId];
-            myBonusAngle += GameManager.instance.specificBonusAngle[skillId];
             myBonusKnockback += GameManager.instance.specificBonusKnockback[skillId];
         }
 
-        // 3. ÃÖÁ¾ ½ºÅÈ ÁøÂ¥·Î Àû¿ëÇÏ±â! 
         skillDamage += myBonusDamage;
-        knockbackPower += myBonusKnockback; // ³Ë¹é ÆÄ¿ö Áõ°¡ Àû¿ë!
+        knockbackPower += myBonusKnockback;
 
-        // Å©±â Àû¿ë 
         float finalSizeMultiplier = 1.0f + (chainLevel - 1) * sizeMultiplierPerLevel + myBonusSize;
         transform.localScale = new Vector3(finalSizeMultiplier, finalSizeMultiplier, 1f);
 
-        // 4. ÀûÀ» ÇâÇØ Á¶ÁØ!
+        // 4. ì ì„ í–¥í•´ ì¡°ì¤€! (í•œ ë²ˆë§Œ ë”± ì¡°ì¤€í•©ë‹ˆë‹¤)
         AimOnce();
 
-        // 5. È¸Àü °¢µµ Àû¿ë! (baseArcAngleÀÇ Àı¹İÀ» ±âÁØÀ¸·Î Àâ°í ³» º¸³Ê½º °¢µµ¸¦ ´õÇÕ´Ï´Ù)
-        float swingAngle = (baseArcAngle / 2f) + myBonusAngle;
-
-        // 6. Â¦¼ö/È¦¼ö¿¡ µû¸¥ ±³Â÷ ½ºÀ® ¼¼ÆÃ
-        if (chainLevel % 2 == 0)
+        // 5. ì§ìˆ˜/í™€ìˆ˜ì— ë”°ë¥¸ êµì°¨ ìŠ¤ìœ™ (ë¬¼ë¦¬ì  íšŒì „ ëŒ€ì‹  ì´ë¯¸ì§€ ë’¤ì§‘ê¸°!)
+        if (chainLevel % 2 == 0 && sr != null)
         {
-            startRotation = transform.rotation * Quaternion.Euler(0f, 0f, swingAngle);
-            targetRotation = transform.rotation * Quaternion.Euler(0f, 0f, -swingAngle);
-        }
-        else
-        {
-            startRotation = transform.rotation * Quaternion.Euler(0f, 0f, -swingAngle);
-            targetRotation = transform.rotation * Quaternion.Euler(0f, 0f, swingAngle);
+            // ì´í™íŠ¸ ëª¨ì–‘ì— ë”°ë¼ flipX ë˜ëŠ” flipYë¥¼ ì„ íƒí•˜ì„¸ìš”! (íœ˜ë‘ë¥´ëŠ” ë°©í–¥ì´ ë°˜ëŒ€ë¡œ ë³´ì„)
+            sr.flipY = true; 
         }
 
-        transform.rotation = startRotation;
+        // ì• ë‹ˆë©”ì´ì…˜ ì¬ìƒ ì‹œê°„(duration)ì´ ëë‚˜ë©´ ì¹¼ê°™ì´ ì‚­ì œ!
         Destroy(gameObject, duration);
     }
 
     private void Update()
     {
-        float progress = (Time.time - startTime) / duration;
-
-        transform.rotation = Quaternion.Lerp(startRotation, targetRotation, progress);
-
+        // ğŸ’¡ ê¶¤ì  ì• ë‹ˆë©”ì´ì…˜ ìì²´ê°€ íœ˜ë‘ë¥´ëŠ” ëª¨ìŠµì„ ë‹¤ ë³´ì—¬ì£¼ë¯€ë¡œ Lerp íšŒì „ì€ ê³¼ê°íˆ ì‚­ì œí–ˆìŠµë‹ˆë‹¤!
         CheckHitsManually();
     }
 
     private void AimOnce()
     {
+        // ìœ ì €ë‹˜ ì½”ë“œ ê·¸ëŒ€ë¡œ ìœ ì§€! (ì•„ì£¼ í›Œë¥­í•©ë‹ˆë‹¤)
         EnemyController[] allEnemies = FindObjectsOfType<EnemyController>();
         if (allEnemies.Length == 0) return;
 
@@ -94,12 +78,15 @@ public class WhipSkill : SkillEffect
         {
             Vector2 dir = (nearestEnemy.position - transform.position).normalized;
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-
+            
+            // ì´í™íŠ¸ ì›ë³¸ ì´ë¯¸ì§€ê°€ ì–´ë””ë¥¼ ë³´ê³  ìˆëŠëƒì— ë”°ë¼ + 90f ë³´ì •ì€ ì¡°ì ˆí•´ì£¼ì„¸ìš”.
             transform.rotation = Quaternion.Euler(0f, 0f, angle + 90f);
         }
     }
+
     private void CheckHitsManually()
     {
+        // ìœ ì €ë‹˜ ì½”ë“œ ê·¸ëŒ€ë¡œ ìœ ì§€! (ì™„ë²½í•©ë‹ˆë‹¤)
         if (myCollider == null) return;
 
         List<Collider2D> results = new List<Collider2D>();
@@ -115,7 +102,6 @@ public class WhipSkill : SkillEffect
             if (enemy != null && !hitEnemies.Contains(enemy))
             {
                 enemy.TakeDamage(skillDamage, transform.position, knockbackPower);
-
                 hitEnemies.Add(enemy);
             }
         }

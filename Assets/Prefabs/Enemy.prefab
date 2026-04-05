@@ -61,7 +61,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -80,11 +80,12 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -44025399
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -156,8 +157,11 @@ MonoBehaviour:
   hp: 3
   knockbackPower: 10
   isKnockBack: 0
-  expGemPrefab: {fileID: 2809856745055835043, guid: a306470313274ad42acb06191582e0f5, type: 3}
-  magnetItemPrefab: {fileID: 8930598463523886304, guid: 342df407d62923f46aea42a7839c5ce5, type: 3}
+  isDead: 0
+  expGemPrefab: {fileID: 2809856745055835043, guid: a306470313274ad42acb06191582e0f5,
+    type: 3}
+  magnetItemPrefab: {fileID: 8930598463523886304, guid: 342df407d62923f46aea42a7839c5ce5,
+    type: 3}
 --- !u!50 &4960549899161165024
 Rigidbody2D:
   serializedVersion: 5
