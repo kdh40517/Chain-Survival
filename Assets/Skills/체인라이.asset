@@ -12,16 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5858207a76291f54088fde6f8e8b8cb8, type: 3}
   m_Name: "\uCCB4\uC778\uB77C\uC774"
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
+  dropWeight: 70
   cardType: 0
   skillName: "\uCCB4\uB77C"
   skillDescription: "\uADF8\uAC70 \uCB49\uCB49\uC774"
   skillIcon: {fileID: 0}
-  skillPrefab: {fileID: 4849874464043037214, guid: e67282bfdcc8dd841970aa25fa7d7261, type: 3}
-  bonusDamage: 0
-  bonusSize: 0
-  bonusDuration: 0
-  bonusAngle: 0
+  skillPrefab: {fileID: 4849874464043037214, guid: e67282bfdcc8dd841970aa25fa7d7261,
+    type: 3}
+  bonusMaxHP: 0
+  bonusDefense: 0
+  bonusMagneticRange: 0
   targetSkillId: 
   specificBonusDamage: 0
   specificBonusSize: 0
   specificBonusChains: 0
+  specificBonusDuration: 0
+  specificBonusTickRate: 0
+  specificBonusAngle: 0
+  specificBonusKnockback: 0
+  specificBonusSwords: 0
+  specificBonusRadius: 0

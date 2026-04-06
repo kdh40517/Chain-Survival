@@ -167,7 +167,8 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         if (isInvincible || isDashing) return;
-        currenHp -= damage;
+        int finalDamege = Mathf.Max(0, damage - GameManager.instance.globalBonusDefense);
+        currenHp -= finalDamege;
         if (hpBar != null) hpBar.value = currenHp;
         if (currenHp <= 0)
         {
@@ -188,5 +189,29 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(invincibleTime);
         mySprite.color = new Color(1, 1, 1, 1f);
         isInvincible = false;
+    }
+    public void UpdateMaxHp()
+    {
+        int newMaxHp = maxHp + GameManager.instance.globalBonusMaxHP;
+        if (hpBar != null)
+        {
+            int hpDifference = newMaxHp - (int)hpBar.maxValue;
+            currenHp += hpDifference;
+            hpBar.maxValue = newMaxHp;
+            hpBar.value = currenHp;
+        }
+    }
+    public void UpdateMagneticRange()
+    {
+        Transform magnetArea = transform.Find("MagnetArea");
+        if (magnetArea != null)
+        {
+            CircleCollider2D magnetCollider = magnetArea.GetComponent<CircleCollider2D>();
+            if (magnetCollider != null)
+            {
+                float baseRadius = 3.0f;
+                magnetCollider.radius = baseRadius + GameManager.instance.globalBonusMagneticRange;
+            }
+        }
     }
 }

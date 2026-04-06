@@ -10,26 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5858207a76291f54088fde6f8e8b8cb8, type: 3}
-  m_Name: "\uD654\uC5FC\uBC29\uC0AC"
+  m_Name: Orbit 3
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
-  dropWeight: 70
-  cardType: 0
-  skillName: "\uD30C\uC774\uC5B4"
-  skillDescription: 
-  skillIcon: {fileID: 3156107029382681173, guid: 39eec4d46ba097a4387b763c0ae38ca7,
-    type: 3}
-  skillPrefab: {fileID: 6342877270975387178, guid: fbf72eb4abe9f134bb8a050aaccf6901,
-    type: 3}
+  dropWeight: 50
+  cardType: 2
+  skillName: "\uACF5\uC804"
+  skillDescription: "\uD06C\uAE302\n\uBC94\uC7041"
+  skillIcon: {fileID: 0}
+  skillPrefab: {fileID: 0}
   bonusMaxHP: 0
   bonusDefense: 0
   bonusMagneticRange: 0
-  targetSkillId: 
+  targetSkillId: Orbit
   specificBonusDamage: 0
-  specificBonusSize: 0
+  specificBonusSize: 0.1
   specificBonusChains: 0
   specificBonusDuration: 0
   specificBonusTickRate: 0
   specificBonusAngle: 0
   specificBonusKnockback: 0
   specificBonusSwords: 0
-  specificBonusRadius: 0
+  specificBonusRadius: 1

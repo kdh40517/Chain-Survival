@@ -39,11 +39,16 @@ public class SkillCardUI : MonoBehaviour
         }
         else if (mySkillData.cardType == CardType.PassiveStat)
         {
-            GameManager.instance.globalBonusDamage += mySkillData.bonusDamage;
-            GameManager.instance.globalBonusSize += mySkillData.bonusSize;
-            GameManager.instance.globalBonusDuration += mySkillData.bonusDuration;
-            GameManager.instance.globalBonusAngle += mySkillData.bonusAngle;
-            Debug.Log($"💪 패시브 획득! 현재 글로벌 추가 크기: {GameManager.instance.globalBonusSize}");
+            GameManager.instance.globalBonusMaxHP += mySkillData.bonusMaxHP;
+            GameManager.instance.globalBonusDefense += mySkillData.bonusDefense;
+            GameManager.instance.globalBonusMagneticRange += mySkillData.bonusMagneticRange;
+
+            GameObject player = GameObject.Find("Player");
+            if (player != null) {
+                PlayerController pc = player.GetComponent<PlayerController>();
+                pc.UpdateMaxHp();
+                pc.UpdateMagneticRange();
+            }
         }
         else if (mySkillData.cardType == CardType.SkillUpgrade)
         {
@@ -55,7 +60,9 @@ public class SkillCardUI : MonoBehaviour
                 mySkillData.specificBonusDuration,
                 mySkillData.specificBonusTickRate,
                 mySkillData.specificBonusAngle,
-                mySkillData.specificBonusKnockback
+                mySkillData.specificBonusKnockback,
+                mySkillData.specificBonusSwords,
+                mySkillData.specificBonusRadius
             );
         }
             GameManager.instance.CloseLevelUpUI();

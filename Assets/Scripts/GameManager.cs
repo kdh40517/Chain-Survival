@@ -18,12 +18,6 @@ public class GameManager : MonoBehaviour
     public SkillData[] allSkills;
     public SkillCardUI[] skillCards;
 
-    [Header("글로벌 패시브 스탯 주머니")]
-    public int globalBonusDamage = 0;
-    public float globalBonusSize = 0f;
-    public float globalBonusDuration = 0f;
-    public float globalBonusAngle = 0f;
-
     [Header("개별 스킬 전용 사물함")]
     public Dictionary<string, int> specificBonusDamage = new Dictionary<string, int>();
     public Dictionary<string, float> specificBonusSize = new Dictionary<string, float>();
@@ -32,13 +26,21 @@ public class GameManager : MonoBehaviour
     public Dictionary<string, float> specificBonusTickRate = new Dictionary<string, float>();
     public Dictionary<string, float> specificBonusAngle = new Dictionary<string, float>();
     public Dictionary<string, float> specificBonusKnockback = new Dictionary<string, float>();
+    public Dictionary<string, int> specificBonusSwords = new Dictionary<string, int>(); // 추가 검 개수
+    public Dictionary<string, float> specificBonusRadius = new Dictionary<string, float>(); // 추가 반경
+
+    [Header("글로벌 패시브 (생존/유틸)")]
+    public int globalBonusMaxHP = 0;
+    public int globalBonusDefense = 0;
+    public float globalBonusMagneticRange = 0f;
+    
 
     private void Awake() { instance = this; }
     private void Start()
     {
         UpdateExpUI();
     }
-    public void UpgradeSpecificSkill(string id, int dmg, float size, int chains, float duration, float tickRate, float angle, float knockback)
+    public void UpgradeSpecificSkill(string id, int dmg, float size, int chains, float duration, float tickRate, float angle, float knockback, int extraSwords, float radius)
     {
         if (!specificBonusDamage.ContainsKey(id)) specificBonusDamage[id] = 0;
         if (!specificBonusSize.ContainsKey(id)) specificBonusSize[id] = 0f;
@@ -47,6 +49,8 @@ public class GameManager : MonoBehaviour
         if (!specificBonusTickRate.ContainsKey(id)) specificBonusTickRate[id] = 0f;
         if (!specificBonusAngle.ContainsKey(id)) specificBonusAngle[id] = 0f;
         if (!specificBonusKnockback.ContainsKey(id)) specificBonusKnockback[id] = 0f;
+        if (!specificBonusSwords.ContainsKey(id)) specificBonusSwords[id] = 0;
+        if (!specificBonusRadius.ContainsKey(id)) specificBonusRadius[id] = 0f;
 
         specificBonusDamage[id] += dmg;
         specificBonusSize[id] += size;
@@ -55,8 +59,8 @@ public class GameManager : MonoBehaviour
         specificBonusTickRate[id] += tickRate;
         specificBonusAngle[id] += angle;
         specificBonusKnockback[id] += knockback;
-
-        Debug.Log($"[{id}] 스킬 전용 강화 완료! 누적 추가 데미지: {specificBonusDamage[id]}");
+        specificBonusSwords[id] += extraSwords;
+        specificBonusRadius[id] += radius;
     }
     public void AddCombo()
     {

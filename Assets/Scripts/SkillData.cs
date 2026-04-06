@@ -24,10 +24,9 @@ public class SkillData : ScriptableObject
     public GameObject skillPrefab;
 
     [Header("패시브 스탯 전용 (CardType이 PassiveStat일 때만 사용)")]
-    public int bonusDamage;
-    public float bonusSize;
-    public float bonusDuration;
-    public float bonusAngle;
+    public int bonusMaxHP;           // 최대 체력 증가
+    public int bonusDefense;         // 방어력 증가 (받는 피해 감소)
+    public float bonusMagneticRange; // 자석 획득 범위 증가
 
     [Header("특정 스킬 전용 강화 (CardType이 SkillUpgrade일 때 사용)")]
     public string targetSkillId;
@@ -38,4 +37,6 @@ public class SkillData : ScriptableObject
     public float specificBonusTickRate;
     public float specificBonusAngle;
     public float specificBonusKnockback;
+    public int specificBonusSwords; // 이 강화 카드를 먹으면 검 개수 추가!
+    public float specificBonusRadius; // 이 강화 카드를 먹으면 반경 증가!
 }

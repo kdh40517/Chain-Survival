@@ -2340,14 +2340,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9039f4163574d4f4e8a7b7e02bf8b1c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  comboLinkDelay: 0.15
-  comboWindow: 0.8
-  fullRecoveryTime: 0.6
+  comboLinkDelay: 0.1
+  comboWindow: 0.5
+  fullRecoveryTime: 1
   speed: 5
   attackArea: {fileID: 1365537511}
   dashSpeed: 15
   dashDuration: 0.2
-  attackCooldown: 0.5
+  attackCooldown: 0.9
   maxHp: 100
   currenHp: 0
   hpBar: {fileID: 1768263699}
@@ -4112,10 +4112,6 @@ MonoBehaviour:
   levelTextUI: {fileID: 889091502}
   levelUpPanel: {fileID: 1985502840}
   allSkills:
-  - {fileID: 11400000, guid: 1b572edb27656b24795cff8a497ca5f2, type: 2}
-  - {fileID: 11400000, guid: 74a6de243781a9040b5154ba26366947, type: 2}
-  - {fileID: 0}
-  - {fileID: 11400000, guid: 3089bf3f993d4a04d9399cef5f21d19d, type: 2}
   - {fileID: 11400000, guid: 15cdfb24b2a673442aecdc4be8fdfffa, type: 2}
   - {fileID: 11400000, guid: 7170537358f6f944eb23cc0536627299, type: 2}
   - {fileID: 11400000, guid: bdd71461bd0c7d749bdeff970ee43922, type: 2}
@@ -4125,17 +4121,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bc3e5a06469202745804c1293b192a2d, type: 2}
   - {fileID: 11400000, guid: f6afb43217b633f4ab4a8e088429a903, type: 2}
   - {fileID: 11400000, guid: b3727ceddc22a83459c6e2e2f0f53084, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: de3f0cc0c1990d5438a0a5c362c218ec, type: 2}
+  - {fileID: 11400000, guid: 1ea3b9726cea779418fe7202b82e4d04, type: 2}
+  - {fileID: 11400000, guid: e0f8476fa6a9942478cbe998ee0c090f, type: 2}
+  - {fileID: 11400000, guid: f75190e38e9cc9140ac2040ea338fad6, type: 2}
   skillCards:
   - {fileID: 511472500}
   - {fileID: 1821652818}
   - {fileID: 649539548}
-  globalBonusDamage: 0
-  globalBonusSize: 0
-  globalBonusDuration: 0
-  globalBonusAngle: 0
+  globalBonusMaxHP: 0
+  globalBonusDefense: 0
+  globalBonusMagneticRange: 0
 --- !u!1 &2089778856
 GameObject:
   m_ObjectHideFlags: 0

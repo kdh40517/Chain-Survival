@@ -13,9 +13,9 @@ public class FireSkill : SkillEffect
     private void Start()
     {
         // 1. 공용 주머니(글로벌) 스탯 먼저 챙기기
-        int myBonusDamage = GameManager.instance.globalBonusDamage;
-        float myBonusSize = GameManager.instance.globalBonusSize;
-        float myBonusDuration = GameManager.instance.globalBonusDuration;
+        int myBonusDamage = 0;
+        float myBonusSize = 0f;
+        float myBonusDuration = 0f;
         float myBonusTickInterval = 0f;
 
         // 2. 내 이름표(skillId)로 사물함 열어서 싹싹 긁어오기!
@@ -55,7 +55,7 @@ public class FireSkill : SkillEffect
     }
     private void AimAtNearestEnemy()
     {
-        EnemyController[] allEnemies = FindObjectsOfType<EnemyController>();
+        EnemyController[] allEnemies = FindObjectsByType<EnemyController>(FindObjectsInactive.Exclude);
         if (allEnemies.Length == 0) return;
         Transform nearestEnemy = null;
         float minDistance = Mathf.Infinity;

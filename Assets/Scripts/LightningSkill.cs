@@ -22,8 +22,7 @@ public class LightningSkill : SkillEffect
         lr = GetComponent<LineRenderer>();
         if (lr == null) Debug.Log("🚨 LineRenderer 컴포넌트가 필요합니다!");
         StartCoroutine(AnimateSpriteSheet());
-        skillDamage += GameManager.instance.globalBonusDamage;
-        float myBonusSize = GameManager.instance.globalBonusSize;
+        float myBonusSize = 0f;
         int myBonusChains = 0;
 
         if (GameManager.instance.specificBonusDamage.ContainsKey(skillId))
@@ -90,7 +89,7 @@ public class LightningSkill : SkillEffect
     }
     private EnemyController FindNearestEnemy(Vector3 center, float maxRadius)
     {
-        EnemyController[] allEnemies = FindObjectsOfType<EnemyController>();
+        EnemyController[] allEnemies = FindObjectsByType<EnemyController>(FindObjectsInactive.Exclude);
         EnemyController nearest = null;
         float minDistance = maxRadius;
         foreach (EnemyController enemy in allEnemies)

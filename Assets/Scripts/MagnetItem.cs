@@ -6,7 +6,7 @@ public class MagnetItem : MagneticItem
     {
         if (collision.name == "Player")
         {
-            ExpGem[] allGems = FindObjectsOfType<ExpGem>();
+            ExpGem[] allGems = FindObjectsByType<ExpGem>(FindObjectsInactive.Exclude);
             foreach (ExpGem gem in allGems)
             {
                 gem.StartAttraction(collision.transform);
