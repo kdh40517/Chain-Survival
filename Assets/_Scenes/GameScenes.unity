@@ -2515,7 +2515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChainManager
   skillSlots:
-  - {fileID: 3593761789737601989, guid: aa2e2a774bf526945afe00a7910eee19, type: 3}
+  - {fileID: 4089907919197470085, guid: 8300412f19f2f0a41bb82f0667dbff7e, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -4125,6 +4125,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1ea3b9726cea779418fe7202b82e4d04, type: 2}
   - {fileID: 11400000, guid: e0f8476fa6a9942478cbe998ee0c090f, type: 2}
   - {fileID: 11400000, guid: f75190e38e9cc9140ac2040ea338fad6, type: 2}
+  - {fileID: 11400000, guid: 174a5bb2575765747992e1f526a44f76, type: 2}
+  - {fileID: 11400000, guid: d903420e1148f444aa39bcfa0aff22d2, type: 2}
+  - {fileID: 11400000, guid: 570ff3222e6075c4b9a13654c6b8bca1, type: 2}
+  - {fileID: 11400000, guid: 7a1a00a9e708f264eb5192c646f9dabc, type: 2}
   skillCards:
   - {fileID: 511472500}
   - {fileID: 1821652818}
