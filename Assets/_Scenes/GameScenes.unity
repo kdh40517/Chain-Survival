@@ -2515,7 +2515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChainManager
   skillSlots:
-  - {fileID: 4089907919197470085, guid: 8300412f19f2f0a41bb82f0667dbff7e, type: 3}
+  - {fileID: 4700008369447839087, guid: d0937c928a9ef1049997548d8fa7a374, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -4129,6 +4129,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d903420e1148f444aa39bcfa0aff22d2, type: 2}
   - {fileID: 11400000, guid: 570ff3222e6075c4b9a13654c6b8bca1, type: 2}
   - {fileID: 11400000, guid: 7a1a00a9e708f264eb5192c646f9dabc, type: 2}
+  - {fileID: 11400000, guid: 86841ed039dfa574a8c13af955f2b90d, type: 2}
+  - {fileID: 11400000, guid: b8db5f6b965939e4c8f049b69416af29, type: 2}
+  - {fileID: 11400000, guid: cb5b853b0f55236409d96663420a30d0, type: 2}
+  - {fileID: 11400000, guid: a6029c2d1ccd3dd41ba717535af89b79, type: 2}
+  - {fileID: 11400000, guid: a6029c2d1ccd3dd41ba717535af89b79, type: 2}
+  - {fileID: 11400000, guid: a6029c2d1ccd3dd41ba717535af89b79, type: 2}
+  - {fileID: 11400000, guid: a6029c2d1ccd3dd41ba717535af89b79, type: 2}
+  - {fileID: 11400000, guid: a6029c2d1ccd3dd41ba717535af89b79, type: 2}
   skillCards:
   - {fileID: 511472500}
   - {fileID: 1821652818}

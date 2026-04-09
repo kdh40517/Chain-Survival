@@ -10,25 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5858207a76291f54088fde6f8e8b8cb8, type: 3}
-  m_Name: "\uD30C\uBCFC"
+  m_Name: Shockwave 2
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
-  dropWeight: 70
-  cardType: 0
-  skillName: "\uD30C\uC774\uC5B4\uBCFC"
-  skillDescription: "\uB300\uCDA9 \uADF8\uAC70\n"
+  dropWeight: 30
+  cardType: 2
+  skillName: "\uCDA9\uACA9\uD30C \uB808\uC5B4"
+  skillDescription: 
   skillIcon: {fileID: 0}
-  skillPrefab: {fileID: 4089907919197470085, guid: 8300412f19f2f0a41bb82f0667dbff7e,
-    type: 3}
+  skillPrefab: {fileID: 0}
   bonusMaxHP: 0
   bonusDefense: 0
   bonusMagneticRange: 0
-  targetSkillId: 
-  specificBonusDamage: 0
-  specificBonusSize: 0
+  targetSkillId: Shockwave
+  specificBonusDamage: 2
+  specificBonusSize: 0.3
   specificBonusChains: 0
   specificBonusDuration: 0
   specificBonusTickRate: 0
   specificBonusAngle: 0
-  specificBonusKnockback: 0
+  specificBonusKnockback: 0.2
   specificBonusSwords: 0
   specificBonusRadius: 0

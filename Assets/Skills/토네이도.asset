@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5858207a76291f54088fde6f8e8b8cb8, type: 3}
-  m_Name: "\uD30C\uBCFC"
+  m_Name: "\uD1A0\uB124\uC774\uB3C4"
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   dropWeight: 70
   cardType: 0
-  skillName: "\uD30C\uC774\uC5B4\uBCFC"
-  skillDescription: "\uB300\uCDA9 \uADF8\uAC70\n"
+  skillName: "\uD1A0\uB124\uC774\uB3C4"
+  skillDescription: 
   skillIcon: {fileID: 0}
-  skillPrefab: {fileID: 4089907919197470085, guid: 8300412f19f2f0a41bb82f0667dbff7e,
+  skillPrefab: {fileID: 3216845250031417887, guid: 6ef3b0a54c022d64d86c55bd81ea99c6,
     type: 3}
   bonusMaxHP: 0
   bonusDefense: 0

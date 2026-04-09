@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
     public void AddCombo()
     {
         comboScore++;
-        comboTextUI.text = "COMBO : " + comboScore.ToString();
+        comboTextUI.text = "KillScore : " + comboScore.ToString();
     }
     public void GameOver()
     {

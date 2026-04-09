@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   dropWeight: 30
   cardType: 2
-  skillName: 
+  skillName: "\uACF5\uC8042"
   skillDescription: "\uB51C1\n\uD06C\uAE301\n\uBC94\uC7041"
   skillIcon: {fileID: 0}
   skillPrefab: {fileID: 0}

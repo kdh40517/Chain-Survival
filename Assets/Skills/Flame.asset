@@ -14,23 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   dropWeight: 90
   cardType: 2
-  skillName: "\uD50C\uB808\uC784"
+  skillName: "\uD50C\uB808\uC784 \uD06C\uAE30"
   skillDescription: '0.1
-
-    0.01
 
 '
   skillIcon: {fileID: 0}
   skillPrefab: {fileID: 0}
-  bonusDamage: 0
-  bonusSize: 0
-  bonusDuration: 0
-  bonusAngle: 0
+  bonusMaxHP: 0
+  bonusDefense: 0
+  bonusMagneticRange: 0
   targetSkillId: Fire
   specificBonusDamage: 0
-  specificBonusSize: 5
+  specificBonusSize: 0.1
   specificBonusChains: 0
   specificBonusDuration: 0
   specificBonusTickRate: 0
   specificBonusAngle: 0
   specificBonusKnockback: 0
+  specificBonusSwords: 0
+  specificBonusRadius: 0
