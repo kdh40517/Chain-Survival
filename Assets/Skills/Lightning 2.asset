@@ -14,15 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   dropWeight: 80
   cardType: 2
-  skillName: Lightning  nomal
-  skillDescription: ' 00 3'
+  skillName: "\uCCB4\uC778\uB77C\uC774\uD2B8\uB2DD \uB178\uB9D0"
+  skillDescription: "\uBCF4\uB108\uC2A4 \uCCB4\uC778 +1"
   skillIcon: {fileID: 0}
   skillPrefab: {fileID: 0}
-  bonusDamage: 0
-  bonusSize: 0
-  bonusDuration: 0
-  bonusAngle: 0
+  bonusMaxHP: 0
+  bonusDefense: 0
+  bonusMagneticRange: 0
   targetSkillId: Lightning
   specificBonusDamage: 0
   specificBonusSize: 0
-  specificBonusChains: 3
+  specificBonusChains: 1
+  specificBonusDuration: 0
+  specificBonusTickRate: 0
+  specificBonusAngle: 0
+  specificBonusKnockback: 0
+  specificBonusSwords: 0
+  specificBonusRadius: 0

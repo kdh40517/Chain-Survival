@@ -15,7 +15,7 @@ MonoBehaviour:
   dropWeight: 30
   cardType: 2
   skillName: "\uCDA9\uACA9\uD30C \uB808\uC5B4"
-  skillDescription: 
+  skillDescription: "\uB370\uBBF8\uC9C0 +2\n\uD06C\uAE30 +0.3\n\uB109\uBC31 +1"
   skillIcon: {fileID: 0}
   skillPrefab: {fileID: 0}
   bonusMaxHP: 0
@@ -28,6 +28,6 @@ MonoBehaviour:
   specificBonusDuration: 0
   specificBonusTickRate: 0
   specificBonusAngle: 0
-  specificBonusKnockback: 0.2
+  specificBonusKnockback: 1
   specificBonusSwords: 0
   specificBonusRadius: 0

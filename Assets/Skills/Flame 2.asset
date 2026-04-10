@@ -12,20 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5858207a76291f54088fde6f8e8b8cb8, type: 3}
   m_Name: Flame 2
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
-  dropWeight: 80
+  dropWeight: 10
   cardType: 2
-  skillName: "\uD50C\uB808\uC784\uD2F1"
-  skillDescription: '1
-
-    0.05
-
-'
+  skillName: "\uD654\uC5FC\uBC29\uC0AC \uD2F1"
+  skillDescription: "\uB370\uBBF8\uC9C0 \uD2F1 +0.05\n"
   skillIcon: {fileID: 0}
   skillPrefab: {fileID: 0}
-  bonusDamage: 0
-  bonusSize: 0
-  bonusDuration: 0
-  bonusAngle: 0
+  bonusMaxHP: 0
+  bonusDefense: 0
+  bonusMagneticRange: 0
   targetSkillId: Fire
   specificBonusDamage: 1
   specificBonusSize: 0
@@ -34,3 +29,5 @@ MonoBehaviour:
   specificBonusTickRate: 0.05
   specificBonusAngle: 0
   specificBonusKnockback: 0
+  specificBonusSwords: 0
+  specificBonusRadius: 0

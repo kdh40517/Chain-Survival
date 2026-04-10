@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   dropWeight: 30
   cardType: 2
-  skillName: "\uACF5\uC8042"
-  skillDescription: "\uB51C1\n\uD06C\uAE301\n\uBC94\uC7041"
+  skillName: "\uACF5\uC804 \uD76C\uADC0"
+  skillDescription: "\uB370\uBBF8\uC9C0 +1\n\uD06C\uAE30 +0.5\n\uAC2F\uC218 +1"
   skillIcon: {fileID: 0}
   skillPrefab: {fileID: 0}
   bonusMaxHP: 0
@@ -29,5 +29,5 @@ MonoBehaviour:
   specificBonusTickRate: 0
   specificBonusAngle: 0
   specificBonusKnockback: 0
-  specificBonusSwords: 0
-  specificBonusRadius: 1
+  specificBonusSwords: 1
+  specificBonusRadius: 0

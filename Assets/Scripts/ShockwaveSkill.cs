@@ -5,7 +5,7 @@ public class ShockwaveSkill : SkillEffect
 {
     [Header("충격파 고유 설정")]
     public float baseRadius = 3.0f;     // 기본 폭발 반경
-    public float expandDuration = 0.2f; // 0.2초 만에 "쾅!" 하고 터짐 (속도)
+    // 서서히 커지는 속도(expandDuration) 변수는 쳐냈습니다!
 
     private void Start()
     {
@@ -36,8 +36,6 @@ public class ShockwaveSkill : SkillEffect
 
         // 최종 반경 = 기본 반경 + 체인당 0.5씩 증가 + 보너스 사이즈
         float finalRadius = baseRadius + (chainLevel * 0.5f) + myBonusSize;
-
-        // 💡 충격파의 핵심은 넉백! 체인이 오를수록 더 멀리 날려버립니다.
         float finalKnockback = knockbackPower * (1f + chainLevel * 0.2f);
 
         // 🚨 [대망의 6체인 궁극기 로직] 🚨
@@ -49,8 +47,7 @@ public class ShockwaveSkill : SkillEffect
             Debug.Log("💥 [충격파 6체인] 화면 붕괴 붕괴!! 싹 다 밀쳐냄!!");
         }
 
-        // 2. 데미지 즉시 판정 (이게 제일 중요! ⭐)
-        // 콜라이더가 커지길 기다리지 않고, 폭발 범위 안의 모든 적을 한 번에 긁어와서 때립니다.
+        // 2. 데미지 즉시 판정 (폭발 범위 안의 모든 적을 한 번에 긁어와서 때립니다.)
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, finalRadius);
         foreach (Collider2D hit in hits)
         {
@@ -64,25 +61,13 @@ public class ShockwaveSkill : SkillEffect
             }
         }
 
-        // 3. 시각적 연출 ("쾅!" 하고 커지면서 서서히 투명해지기)
-        Vector3 startScale = Vector3.zero; // 점(0)에서 시작
-        Vector3 targetScale = new Vector3(finalRadius * 2f, finalRadius * 2f, 1f); // 지름(반경의 2배)까지 커짐
+        // 3. 시각적 연출 (스멀스멀 커지는 거 삭제! 1프레임 만에 즉시 쾅!)
+        Vector3 targetScale = new Vector3(finalRadius * 2f, finalRadius * 2f, 1f);
+        transform.localScale = targetScale; // 목표 크기로 한 번에 키움
 
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        Color startColor = sr != null ? sr.color : Color.white;
-        float time = 0f;
-
-        while (time < expandDuration)
-        {
-            time += Time.deltaTime;
-            float progress = time / expandDuration; // 0.0 에서 1.0 까지 증가
-
-            // 크기는 순식간에 커지고 (Lerp)
-            transform.localScale = Vector3.Lerp(startScale, targetScale, progress);
-
-            
-            yield return null; // 다음 프레임까지 대기
-        }
+        // 💡 1프레임 만에 파괴되면 유저 눈에 안 보이니, 터진 그림을 0.2초만 보여주고 지웁니다.
+        // (만약 터지는 애니메이션 클립을 만들어 두셨다면 애니메이션 길이로 맞추셔도 됩니다)
+        yield return new WaitForSeconds(0.2f);
 
         // 4. 폭발 연출이 끝나면 깔끔하게 파괴!
         Destroy(gameObject);

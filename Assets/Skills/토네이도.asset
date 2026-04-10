@@ -15,7 +15,7 @@ MonoBehaviour:
   dropWeight: 70
   cardType: 0
   skillName: "\uD1A0\uB124\uC774\uB3C4"
-  skillDescription: 
+  skillDescription: "\uC801\uC744 \uAD00\uD1B5\uD558\uB294 \uD68C\uC624\uB9AC \uBC14\uB78C"
   skillIcon: {fileID: 0}
   skillPrefab: {fileID: 3216845250031417887, guid: 6ef3b0a54c022d64d86c55bd81ea99c6,
     type: 3}

@@ -14,17 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   dropWeight: 5
   cardType: 2
-  skillName: Lightning
+  skillName: 
   skillDescription: '512
 
 '
   skillIcon: {fileID: 0}
   skillPrefab: {fileID: 0}
-  bonusDamage: 0
-  bonusSize: 0
-  bonusDuration: 0
-  bonusAngle: 0
+  bonusMaxHP: 0
+  bonusDefense: 0
+  bonusMagneticRange: 0
   targetSkillId: Lightning
   specificBonusDamage: 5
   specificBonusSize: 1
   specificBonusChains: 2
+  specificBonusDuration: 0
+  specificBonusTickRate: 0
+  specificBonusAngle: 0
+  specificBonusKnockback: 0
+  specificBonusSwords: 0
+  specificBonusRadius: 0

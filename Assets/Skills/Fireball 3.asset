@@ -15,16 +15,16 @@ MonoBehaviour:
   dropWeight: 50
   cardType: 2
   skillName: "\uD30C\uBCFC\uD07C"
-  skillDescription: 
+  skillDescription: "\uB370\uBBF8\uC9C0 +1\n\uD06C\uAE30 +0.1"
   skillIcon: {fileID: 0}
   skillPrefab: {fileID: 0}
   bonusMaxHP: 0
   bonusDefense: 0
   bonusMagneticRange: 0
   targetSkillId: Fireball
-  specificBonusDamage: 0
-  specificBonusSize: 1
-  specificBonusChains: 1
+  specificBonusDamage: 1
+  specificBonusSize: 0.1
+  specificBonusChains: 0
   specificBonusDuration: 0
   specificBonusTickRate: 0
   specificBonusAngle: 0

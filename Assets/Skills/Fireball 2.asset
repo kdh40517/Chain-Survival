@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5858207a76291f54088fde6f8e8b8cb8, type: 3}
   m_Name: Fireball 2
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
-  dropWeight: 50
+  dropWeight: 30
   cardType: 2
-  skillName: "\uD30C\uBCFC\uB380"
-  skillDescription: 
+  skillName: "\uD30C\uC774\uC5B4\uBCFC \uB808\uC5B4"
+  skillDescription: "\uB370\uBBF8\uC9C0 +2\n\uD3ED\uBC1C\uBC94\uC704 +0.5"
   skillIcon: {fileID: 0}
   skillPrefab: {fileID: 0}
   bonusMaxHP: 0
@@ -30,4 +30,4 @@ MonoBehaviour:
   specificBonusAngle: 0
   specificBonusKnockback: 0
   specificBonusSwords: 0
-  specificBonusRadius: 0
+  specificBonusRadius: 0.5

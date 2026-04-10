@@ -15,7 +15,7 @@ MonoBehaviour:
   dropWeight: 10
   cardType: 2
   skillName: "\uD1A0\uB124\uC774\uB3C4 \uC804\uC124"
-  skillDescription: 10
+  skillDescription: "\uB370\uBBF8\uC9C0 +10\n\uD06C\uAE30 +1"
   skillIcon: {fileID: 0}
   skillPrefab: {fileID: 0}
   bonusMaxHP: 0

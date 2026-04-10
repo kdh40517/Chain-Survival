@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5858207a76291f54088fde6f8e8b8cb8, type: 3}
   m_Name: Flame
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
-  dropWeight: 90
+  dropWeight: 10
   cardType: 2
-  skillName: "\uD50C\uB808\uC784 \uD06C\uAE30"
-  skillDescription: '0.1
-
-'
+  skillName: "\uD654\uC5FC\uBC29\uC0AC \uD06C\uAE30"
+  skillDescription: "\uD06C\uAE30 + 0.1"
   skillIcon: {fileID: 0}
   skillPrefab: {fileID: 0}
   bonusMaxHP: 0

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5858207a76291f54088fde6f8e8b8cb8, type: 3}
   m_Name: Orbit 3
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
-  dropWeight: 50
+  dropWeight: 80
   cardType: 2
-  skillName: "\uACF5\uC804 3"
-  skillDescription: "\uD06C\uAE302\n\uBC94\uC7041"
+  skillName: "\uACF5\uC804 \uB178\uB9D0"
+  skillDescription: "\uD06C\uAE30 +0.2\n\uBC94\uC704 +1"
   skillIcon: {fileID: 0}
   skillPrefab: {fileID: 0}
   bonusMaxHP: 0
@@ -23,7 +23,7 @@ MonoBehaviour:
   bonusMagneticRange: 0
   targetSkillId: Orbit
   specificBonusDamage: 0
-  specificBonusSize: 0.1
+  specificBonusSize: 0.2
   specificBonusChains: 0
   specificBonusDuration: 0
   specificBonusTickRate: 0
