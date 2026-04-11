@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5858207a76291f54088fde6f8e8b8cb8, type: 3}
   m_Name: "\uD30C\uBCFC"
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
-  dropWeight: 70
+  dropWeight: 60
   cardType: 0
   skillName: "\uD30C\uC774\uC5B4\uBCFC"
   skillDescription: "\uC801\uC5D0\uAC8C \uB2FF\uC73C\uBA74 \uD3ED\uBC1C\uD558\uB294

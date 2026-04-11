@@ -214,4 +214,25 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+    public void Heal(int amount)
+    {
+        // 체력이 이미 꽉 차 있으면 먹어도 소용없게
+        if (currenHp >= maxHp) return;
+
+        currenHp += amount;
+
+        // 회복했는데 최대 체력을 넘어가면 최대 체력으로 고정
+        if (currenHp > maxHp)
+        {
+            currenHp = maxHp;
+        }
+
+        // 💡 플레이어 스크립트에 이미 연결된 체력바(hpBar) 바로 업데이트!
+        if (hpBar != null)
+        {
+            hpBar.value = currenHp;
+        }
+
+        Debug.Log("💖 체력 회복! 현재 체력: " + currenHp + " / " + maxHp);
+    }
 }
