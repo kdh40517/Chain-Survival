@@ -1,0 +1,390 @@
+fileFormatVersion: 2
+guid: 111ddf879a7b0d04489a46f45d883a70
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2995502601459260442
+    second: SkillCard-Photoroom_0
+  - first:
+      213: 7189343373216599869
+    second: SkillCard-Photoroom_1
+  - first:
+      213: 5355005029666752632
+    second: SkillCard-Photoroom_2
+  - first:
+      213: -1822549981277491620
+    second: SkillCard-Photoroom_3
+  - first:
+      213: -2171782487206650182
+    second: SkillCard-Photoroom_4
+  - first:
+      213: -846094294072632237
+    second: SkillCard-Photoroom_5
+  - first:
+      213: -2204932952315430710
+    second: SkillCard-Photoroom_6
+  - first:
+      213: 1239671120755692896
+    second: SkillCard-Photoroom_7
+  - first:
+      213: -7719168290489269441
+    second: SkillCard-Photoroom_8
+  - first:
+      213: 1659217977314858512
+    second: SkillCard-Photoroom_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SkillCard-Photoroom_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 859
+        width: 827
+        height: 449
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1cdcb3ceb9229920800000000000000
+      internalID: 2995502601459260442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillCard-Photoroom_1
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 1222
+        width: 52
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3f42e805bda5c360800000000000000
+      internalID: 7189343373216599869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillCard-Photoroom_2
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 881
+        width: 669
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87887b3d3bcc05a40800000000000000
+      internalID: 5355005029666752632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillCard-Photoroom_3
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 873
+        width: 808
+        height: 435
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5e6f84c27005b6e0800000000000000
+      internalID: -1822549981277491620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillCard-Photoroom_4
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 464
+        width: 694
+        height: 348
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abe12a0a5574cd1e0800000000000000
+      internalID: -2171782487206650182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillCard-Photoroom_5
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 467
+        width: 656
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35cd05be8b11244f0800000000000000
+      internalID: -846094294072632237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillCard-Photoroom_6
+      rect:
+        serializedVersion: 2
+        x: 1618
+        y: 467
+        width: 674
+        height: 341
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac87faf79218661e0800000000000000
+      internalID: -2204932952315430710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillCard-Photoroom_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 836
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06514f6f052343110800000000000000
+      internalID: 1239671120755692896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillCard-Photoroom_8
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 47
+        width: 656
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f338de3765100e490800000000000000
+      internalID: -7719168290489269441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillCard-Photoroom_9
+      rect:
+        serializedVersion: 2
+        x: 1618
+        y: 0
+        width: 782
+        height: 388
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0165bce95f9b60710800000000000000
+      internalID: 1659217977314858512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SkillCard-Photoroom_0: 2995502601459260442
+      SkillCard-Photoroom_1: 7189343373216599869
+      SkillCard-Photoroom_2: 5355005029666752632
+      SkillCard-Photoroom_3: -1822549981277491620
+      SkillCard-Photoroom_4: -2171782487206650182
+      SkillCard-Photoroom_5: -846094294072632237
+      SkillCard-Photoroom_6: -2204932952315430710
+      SkillCard-Photoroom_7: 1239671120755692896
+      SkillCard-Photoroom_8: -7719168290489269441
+      SkillCard-Photoroom_9: 1659217977314858512
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

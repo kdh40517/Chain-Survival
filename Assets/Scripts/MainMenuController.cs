@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
@@ -6,7 +7,24 @@ public class MainMenuController : MonoBehaviour
     [Header("UI 연결")]
     public GameObject optionPanel;       // 💡 옵션창 패널
     public Animator buttonGroupAnimator; // 💡 버튼들을 움직일 애니메이터 추가!
+    public AudioMixer myMixer;
 
+    // 슬라이더 값이 0.0001 ~ 1 사이일 때 작동하는 함수들
+    public void SetMasterVolume(float volume)
+    {
+        // 소수점 0~1 값을 데시벨(-80~0)로 변환
+        myMixer.SetFloat("MasterVol", Mathf.Log10(volume) * 20);
+    }
+
+    public void SetBGMVolume(float volume)
+    {
+        myMixer.SetFloat("BGMVol", Mathf.Log10(volume) * 20);
+    }
+
+    public void SetSFXVolume(float volume)
+    {
+        myMixer.SetFloat("SFXVol", Mathf.Log10(volume) * 20);
+    }
     public void ClickStartGame()
     {
         SceneManager.LoadScene("GameScenes");

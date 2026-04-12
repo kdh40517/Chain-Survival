@@ -1,8 +1,9 @@
-﻿using TMPro;
+﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class GameManager : MonoBehaviour
     public int comboScore = 0;
     public TMP_Text comboTextUI;
     public GameObject gameOverUI;
+    public TMP_Text finalScoreTextUI;
     public int level = 1;
     public int currentExp = 0;
     public int maxExp = 50;
@@ -18,6 +20,7 @@ public class GameManager : MonoBehaviour
     public GameObject levelUpPanel;
     public SkillData[] allSkills;
     public SkillCardUI[] skillCards;
+    public AudioMixer myMixer;
 
     [Header("UI 패널 연결 (일시정지/옵션)")]
     public GameObject pauseMenuPanel; // 💡 새로 추가: 일시정지 메뉴 패널
@@ -113,6 +116,18 @@ public class GameManager : MonoBehaviour
         Debug.Log("게임 종료!");
         Application.Quit();
     }
+    public void SetMasterVolume(float volume)
+    {
+        myMixer.SetFloat("MasterVol", Mathf.Log10(volume) * 20);
+    }
+    public void SetBGMVolume(float volume)
+    {
+        myMixer.SetFloat("BGMVol", Mathf.Log10(volume) * 20);
+    }
+    public void SetSFXVolume(float volume)
+    {
+        myMixer.SetFloat("SFXVol", Mathf.Log10(volume) * 20);
+    }
 
     // ============================================================
 
@@ -148,6 +163,13 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         if (gameOverUI != null) gameOverUI.SetActive(true);
+
+        // 💡 핵심: 전임자가 킬 카운트를 'comboScore'에 담아놨으니, 그걸 가져와서 띄운다!
+        if (finalScoreTextUI != null)
+        {
+            finalScoreTextUI.text = "Score : " + comboScore.ToString();
+        }
+
         Time.timeScale = 0f;
     }
 

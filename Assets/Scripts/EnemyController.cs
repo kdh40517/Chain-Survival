@@ -30,10 +30,14 @@ public class EnemyController : MonoBehaviour
     public bool isDead = false;
 
     Transform player;
+    public AudioSource myAudio;
+    public AudioClip hitSound;
+    private static float lastHitSoundTime = 0f;
 
     private void Start()
     {
         player = GameObject.Find("Player").transform;
+        lastAttackTime = -attackCooldown;
     }
 
     private void Update()
@@ -116,22 +120,42 @@ public class EnemyController : MonoBehaviour
 
     public void TakeDamage(int damage, Vector2 hitPosition, float customKnockback)
     {
+        // 1. 이미 죽은 놈은 무시 (완벽 방어막)
         if (isDead) return;
 
         hp -= damage;
 
-        // 💡 맞는 순간 "억!" 하고 애니메이션 강제 캔슬
-        if (anim != null) anim.SetTrigger("Hurt");
-
-        if (customKnockback > 0f)
-        {
-            Vector2 knockbackDir = ((Vector2)transform.position - hitPosition).normalized;
-            StartCoroutine(KnockbackRoutine(knockbackDir, customKnockback));
-        }
-
         if (hp <= 0)
         {
+            // 💡 [죽었을 때]
+            if (anim != null)
+            {
+                anim.ResetTrigger("Hurt"); // 혹시라도 예약된 피격 모션 취소
+                // Die 방아쇠는 밑에 있는 Die() 함수 안에서 이미 당기고 있으니 여기서 또 당길 필요 없습니다!
+            }
             Die();
+        }
+        else
+        {
+            // 💡 [살았을 때] 
+            // 안 죽었을 때만 억! 하고 밀려나게 만듭니다.
+            if (anim != null) anim.SetTrigger("Hurt");
+
+            if (customKnockback > 0f)
+            {
+                Vector2 knockbackDir = ((Vector2)transform.position - hitPosition).normalized;
+                StartCoroutine(KnockbackRoutine(knockbackDir, customKnockback));
+            }
+        }
+        if (myAudio != null && hitSound != null)
+        {
+            // 💡 0.05초가 지났을 때만 소리를 내라! (초당 최대 20번 제한)
+            if (Time.time - lastHitSoundTime > 0.05f)
+            {
+                myAudio.pitch = Random.Range(0.8f, 1.2f); // 타격음이 덜 질리게 음높이 랜덤 살짝!
+                myAudio.PlayOneShot(hitSound, 0.7f);      // 소리 크기도 0.4(40%)로 살짝 줄임
+                lastHitSoundTime = Time.time;             // 마지막으로 소리 낸 시간 리셋
+            }
         }
     }
 

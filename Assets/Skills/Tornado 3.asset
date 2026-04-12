@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5858207a76291f54088fde6f8e8b8cb8, type: 3}
   m_Name: Tornado 3
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
-  dropWeight: 10
+  dropWeight: 5
   cardType: 2
   skillName: "\uD1A0\uB124\uC774\uB3C4 \uC804\uC124"
   skillDescription: "\uB370\uBBF8\uC9C0 +10\n\uD06C\uAE30 +1"
@@ -31,3 +31,4 @@ MonoBehaviour:
   specificBonusKnockback: 0
   specificBonusSwords: 0
   specificBonusRadius: 0
+  rarity: 2

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5858207a76291f54088fde6f8e8b8cb8, type: 3}
   m_Name: Fireball 3
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
-  dropWeight: 50
+  dropWeight: 70
   cardType: 2
-  skillName: "\uD30C\uBCFC\uD07C"
+  skillName: "\uD30C\uBCFC \uB178\uB9D0"
   skillDescription: "\uB370\uBBF8\uC9C0 +1\n\uD06C\uAE30 +0.1"
   skillIcon: {fileID: 0}
   skillPrefab: {fileID: 0}
@@ -31,3 +31,4 @@ MonoBehaviour:
   specificBonusKnockback: 0
   specificBonusSwords: 0
   specificBonusRadius: 0
+  rarity: 0

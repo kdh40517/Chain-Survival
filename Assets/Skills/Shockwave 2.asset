@@ -31,3 +31,4 @@ MonoBehaviour:
   specificBonusKnockback: 1
   specificBonusSwords: 0
   specificBonusRadius: 0
+  rarity: 1

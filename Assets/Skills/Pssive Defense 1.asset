@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5858207a76291f54088fde6f8e8b8cb8, type: 3}
+  m_Name: Pssive Defense 1
+  m_EditorClassIdentifier: Assembly-CSharp::SkillData
+  dropWeight: 80
+  cardType: 1
+  skillName: "\uBC29\uC5B4 \uB178\uB9D0"
+  skillDescription: "\uBC29\uC5B4\uB825 +1"
+  skillIcon: {fileID: 0}
+  skillPrefab: {fileID: 0}
+  bonusMaxHP: 0
+  bonusDefense: 1
+  bonusMagneticRange: 0
+  targetSkillId: 
+  specificBonusDamage: 0
+  specificBonusSize: 0
+  specificBonusChains: 0
+  specificBonusDuration: 0
+  specificBonusTickRate: 0
+  specificBonusAngle: 0
+  specificBonusKnockback: 0
+  specificBonusSwords: 0
+  specificBonusRadius: 0
+  rarity: 0

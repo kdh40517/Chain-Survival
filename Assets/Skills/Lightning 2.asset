@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5858207a76291f54088fde6f8e8b8cb8, type: 3}
   m_Name: Lightning 2
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
-  dropWeight: 80
+  dropWeight: 70
   cardType: 2
   skillName: "\uCCB4\uC778\uB77C\uC774\uD2B8\uB2DD \uB178\uB9D0"
   skillDescription: "\uBCF4\uB108\uC2A4 \uCCB4\uC778 +1"
@@ -31,3 +31,4 @@ MonoBehaviour:
   specificBonusKnockback: 0
   specificBonusSwords: 0
   specificBonusRadius: 0
+  rarity: 0

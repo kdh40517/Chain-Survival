@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class ChainManager : MonoBehaviour
 {
+    [Header("콤보 연출")]
+    public GameObject comboTextPrefab;
+
     public GameObject[] skillSlots = new GameObject[6];
 
     public float[] damegeMultipliers = { 1.5f, 2.0f, 3.0f, 5.0f, 7.0f, 10.0f };
@@ -24,6 +27,18 @@ public class ChainManager : MonoBehaviour
             if (dice <= chainProbabilities[i])
             {
                 Debug.Log((i + 1) + "단 체인 폭발 성공 장착된 스킬:" + skillSlots[i].name);
+                if (comboTextPrefab != null)
+                {
+                    // 플레이어 본체(transform.position)에서 위로(y축) 1.5만큼 띄워서 생성
+                    Vector3 textSpawnPos = transform.position + new Vector3(0f, 1.5f, 0f);
+                    GameObject textObj = Instantiate(comboTextPrefab, textSpawnPos, Quaternion.identity);
+
+                    ComboText comboScript = textObj.GetComponent<ComboText>();
+                    if (comboScript != null)
+                    {
+                        comboScript.Setup(i + 1); // 0부터 시작하니까 +1 해서 "1 Combo", "2 Combo"로 만듦
+                    }
+                }
                 GameObject newSkill = Instantiate(skillSlots[i], targetPos, Quaternion.identity);
                 SkillEffect effectScript = newSkill.GetComponent<SkillEffect>();
                 if (effectScript != null)

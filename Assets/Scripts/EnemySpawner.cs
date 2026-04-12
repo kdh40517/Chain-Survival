@@ -37,7 +37,8 @@ public class EnemySpawner : MonoBehaviour
         EnemyController enemyScript = newEnemy.GetComponent<EnemyController>();
         if (enemyScript != null)
         {
-            enemyScript.hp = 3 + Mathf.FloorToInt(totalGameTime / 10f);
+            enemyScript.hp = 5 + Mathf.FloorToInt(totalGameTime / 10f);
+            enemyScript.attackDamage = 10 + (Mathf.FloorToInt(totalGameTime / 15f) * 2);
         }
     }
 }

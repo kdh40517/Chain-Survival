@@ -5,6 +5,12 @@ public enum CardType
     PassiveStat,
     SkillUpgrade
 }
+public enum CardRarity
+{
+    Normal,
+    Rare,
+    Legendary
+}
 
 [CreateAssetMenu(fileName = "New Skill Data", menuName = "Scriptable Object/Skill Data")]
 public class SkillData : ScriptableObject
@@ -39,4 +45,7 @@ public class SkillData : ScriptableObject
     public float specificBonusKnockback;
     public int specificBonusSwords; // 이 강화 카드를 먹으면 검 개수 추가!
     public float specificBonusRadius; // 이 강화 카드를 먹으면 반경 증가!
+
+    [Header("카드 등급")]
+    public CardRarity rarity = CardRarity.Normal;
 }
