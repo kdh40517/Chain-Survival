@@ -1,2 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# 서드파티 에셋은 GitHub 언어 통계에서 제외
+"Assets/TextMesh Pro/**" linguist-vendored
+Assets/Cainos/** linguist-vendored
