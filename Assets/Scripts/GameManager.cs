@@ -23,9 +23,9 @@ public class GameManager : MonoBehaviour
     public AudioMixer myMixer;
 
     [Header("UI 패널 연결 (일시정지/옵션)")]
-    public GameObject pauseMenuPanel; // 💡 새로 추가: 일시정지 메뉴 패널
-    public GameObject optionPanel;    // 💡 새로 추가: 옵션 메뉴 패널
-    private bool isPaused = false;    // 💡 게임이 멈췄는지 기억하는 변수
+    public GameObject pauseMenuPanel;
+    public GameObject optionPanel;
+    private bool isPaused = false;
 
     [Header("개별 스킬 전용 사물함")]
     public Dictionary<string, int> specificBonusDamage = new Dictionary<string, int>();
@@ -49,22 +49,18 @@ public class GameManager : MonoBehaviour
         UpdateExpUI();
     }
 
-    // 🚨 매 프레임마다 ESC 키를 감시하는 Update 함수 추가!
     private void Update()
     {
-        // 1. 게임 오버나 레벨업 창이 떠있을 때는 ESC 무시하기 (버그 방지)
         if (gameOverUI != null && gameOverUI.activeSelf) return;
         if (levelUpPanel != null && levelUpPanel.activeSelf) return;
 
-        // 2. ESC 키를 눌렀을 때
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            // 만약 옵션창이 켜져있다면, 게임으로 안 돌아가고 '옵션창만' 닫기 (자연스러운 뒤로가기)
             if (optionPanel != null && optionPanel.activeSelf)
             {
                 CloseOption();
             }
-            else // 옵션창이 없다면 일시정지 켜기/끄기
+            else
             {
                 if (isPaused) ResumeGame();
                 else PauseGame();
@@ -72,48 +68,40 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // ================= [일시정지 시스템 함수들] =================
-
-    // 💡 [계속하기] 버튼에 연결할 함수
     public void ResumeGame()
     {
         if (pauseMenuPanel != null) pauseMenuPanel.SetActive(false);
         if (optionPanel != null) optionPanel.SetActive(false);
-        Time.timeScale = 1f; // 시간 다시 흐르게
+        Time.timeScale = 1f;
         isPaused = false;
     }
 
-    // ESC 눌렀을 때 실행되는 일시정지 함수
     public void PauseGame()
     {
         if (pauseMenuPanel != null) pauseMenuPanel.SetActive(true);
-        Time.timeScale = 0f; // 시간 멈추기
+        Time.timeScale = 0f;
         isPaused = true;
     }
 
-    // 💡 [옵션] 버튼에 연결할 함수
     public void OpenOption()
     {
         if (optionPanel != null) optionPanel.SetActive(true);
     }
 
-    // 💡 [닫기] 버튼에 연결할 함수
     public void CloseOption()
     {
         if (optionPanel != null) optionPanel.SetActive(false);
     }
 
-    // 💡 [메인 메뉴로] 버튼에 연결할 함수
     public void GoToMainMenu()
     {
-        Time.timeScale = 1f; // 씬 넘어가기 전에 무조건 시간 원상복구!
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
 
-    // 💡 [게임 종료] 버튼에 연결할 함수
     public void QuitGame()
     {
-        Debug.Log("게임 종료!");
+        Debug.Log("[Game] 종료");
         Application.Quit();
     }
     public void SetMasterVolume(float volume)
@@ -128,8 +116,6 @@ public class GameManager : MonoBehaviour
     {
         myMixer.SetFloat("SFXVol", Mathf.Log10(volume) * 20);
     }
-
-    // ============================================================
 
     public void UpgradeSpecificSkill(string id, int dmg, float size, int chains, float duration, float tickRate, float angle, float knockback, int extraSwords, float radius)
     {
@@ -164,7 +150,6 @@ public class GameManager : MonoBehaviour
     {
         if (gameOverUI != null) gameOverUI.SetActive(true);
 
-        // 💡 핵심: 전임자가 킬 카운트를 'comboScore'에 담아놨으니, 그걸 가져와서 띄운다!
         if (finalScoreTextUI != null)
         {
             finalScoreTextUI.text = "Score : " + comboScore.ToString();
@@ -191,7 +176,7 @@ public class GameManager : MonoBehaviour
         level++;
         currentExp -= maxExp;
         maxExp = Mathf.FloorToInt(maxExp * 1.5f);
-        Debug.Log("🎉 레벨 업!! 현재 레벨: " + level);
+        Debug.Log($"[Level] 레벨 업 - {level}");
         if (levelUpPanel != null) levelUpPanel.SetActive(true);
         Time.timeScale = 0f;
 

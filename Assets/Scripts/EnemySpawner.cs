@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -6,7 +6,7 @@ public class EnemySpawner : MonoBehaviour
     public Transform player;
     public float spawnRadius = 8.0f;
 
-    [Header("½Ã°£ ¹× ½ºÆù ¼³Á¤")]
+    [Header("ì‹œê°„ ë° ìŠ¤í° ì„¤ì •")]
     public float maxGameTime = 60f;
     public float startSpawnDelay = 1.0f;
     public float minSpwanDelay = 0.1f;

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -9,9 +9,9 @@ public class SkillEffect : MonoBehaviour
     public float targetSizeMult = 1f;
     public int skillDamage = 1;
     [HideInInspector] public int chainLevel = 1;
-    [Header("½ºÅ³ ¹ßµ¿ À§Ä¡")]
+    [Header("ìŠ¤í‚¬ ë°œë™ ìœ„ì¹˜")]
     public bool spwnOnPlayer = false;
-    [Header("½ºÅ³ °íÀ¯ ´É·ÂÄ¡")]
+    [Header("ìŠ¤í‚¬ ê³ ìœ  ëŠ¥ë ¥ì¹˜")]
     public float knockbackPower = 0f;
     void Start()
     {

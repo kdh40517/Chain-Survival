@@ -68,12 +68,10 @@ public class PlayerController : MonoBehaviour
         Vector3 playerScale = transform.localScale;
         if (x < 0)
         {
-            // 왼쪽을 보면 X 크기를 마이너스로 만듭니다 (좌우 반전)
             playerScale.x = -Mathf.Abs(playerScale.x);
         }
         else if (x > 0)
         {
-            // 오른쪽을 보면 X 크기를 플러스로 만듭니다 (원상 복구)
             playerScale.x = Mathf.Abs(playerScale.x);
         }
         transform.localScale = playerScale;
@@ -81,34 +79,28 @@ public class PlayerController : MonoBehaviour
         float timeSinceLastAttack = Time.time - lastAttackTime;
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            // 1. 일단 무조건 공격 못 한다고 막아둡니다. (엄격한 검문소)
             bool canAttack = false;
 
-            // 2. 0타(처음 때림)일 때: 쿨타임(0.6초)이 지났으면 통과!
             if (comboStep == 0 && timeSinceLastAttack >= fullRecoveryTime)
             {
                 canAttack = true;
             }
-            // 3. 1타를 친 직후일 때: 
             else if (comboStep == 1)
             {
-                // 다다닥! (최소 연결 시간은 지났고, 유예 시간은 안 지났을 때 통과!)
                 if (timeSinceLastAttack >= comboLinkDelay && timeSinceLastAttack <= comboWindow)
                 {
                     canAttack = true;
                 }
-                // 만약 너무 오래 멍때려서 콤보 시간을 놓쳤다면?
                 else if (timeSinceLastAttack > comboWindow)
                 {
-                    comboStep = 0; // 콤보 초기화! 다시 1타부터 칠 준비를 합니다.
+                    comboStep = 0;
                     if (timeSinceLastAttack >= fullRecoveryTime)
                     {
-                        canAttack = true; // 초기화된 김에 쿨타임 차 있으면 바로 1타 발사!
+                        canAttack = true;
                     }
                 }
             }
 
-            // 4. 위의 검문소를 통과한 사람(true)만 공격을 실행합니다!
             if (canAttack)
             {
                 PerformAttack();
@@ -143,25 +135,18 @@ public class PlayerController : MonoBehaviour
     }
     IEnumerator AttackTimer()
     {
-        // 👇 [핵심 1. 선딜레이] 애니메이션에서 칼을 치켜드는 시간만큼 잠깐 기다려줍니다!
-        // (애니메이션 속도에 맞춰 이 숫자를 0.1f ~ 0.2f 사이로 조절해 보세요)
         yield return new WaitForSeconds(0.15f);
 
-        // 👇 [핵심 2. 타격 발생] 이제 진짜 칼을 휘두르는 타이밍! 공격 판정을 켭니다.
         attackArea.SetActive(true);
 
-        // (테스트용으로 점점 커지던 코드는 지우고, 원하는 고정 크기로 둡니다. 필요시 1.5f 등으로 수정)
         attackArea.transform.localScale = new Vector2(1f, 1f);
 
-        // 이펙트 색상 불투명하게(보이게) 설정
         Color effColor = attackEffectRenderer.color;
         effColor.a = 1f;
         attackEffectRenderer.color = effColor;
 
-        // 👇 [핵심 3. 판정 유지] 적이 맞을 수 있도록 아주 짧은 시간(칼을 뻗고 있는 시간)만 판정을 유지합니다.
         yield return new WaitForSeconds(0.1f);
 
-        // 👇 [핵심 4. 타격 종료] 칼을 다 휘둘렀으니 공격 판정을 끕니다. (이후 애니메이션은 자연스럽게 Idle로 돌아감)
         attackArea.SetActive(false);
     }
     public void TakeDamage(int damage)
@@ -172,7 +157,7 @@ public class PlayerController : MonoBehaviour
         if (hpBar != null) hpBar.value = currenHp;
         if (currenHp <= 0)
         {
-            Debug.Log("사망");
+            Debug.Log("[Player] 사망");
             GameManager.instance.GameOver();
             Destroy(gameObject);
         }
@@ -216,23 +201,20 @@ public class PlayerController : MonoBehaviour
     }
     public void Heal(int amount)
     {
-        // 체력이 이미 꽉 차 있으면 먹어도 소용없게
         if (currenHp >= maxHp) return;
 
         currenHp += amount;
 
-        // 회복했는데 최대 체력을 넘어가면 최대 체력으로 고정
         if (currenHp > maxHp)
         {
             currenHp = maxHp;
         }
 
-        // 💡 플레이어 스크립트에 이미 연결된 체력바(hpBar) 바로 업데이트!
         if (hpBar != null)
         {
             hpBar.value = currenHp;
         }
 
-        Debug.Log("💖 체력 회복! 현재 체력: " + currenHp + " / " + maxHp);
+        Debug.Log($"[Player] 체력 회복 - {currenHp}/{maxHp}");
     }
 }

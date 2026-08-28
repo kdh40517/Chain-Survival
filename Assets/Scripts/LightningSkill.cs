@@ -10,7 +10,7 @@ public class LightningSkill : SkillEffect
     public float displayDuration = 0.3f;
 
     [Header("6체인 특별 설정")]
-    public float splashRadius = 2.5f; // 감전 폭발 범위
+    public float splashRadius = 2.5f;
 
     [Header("애니메이션 설정")]
     public int columns = 4;
@@ -23,7 +23,7 @@ public class LightningSkill : SkillEffect
     private void Start()
     {
         lr = GetComponent<LineRenderer>();
-        if (lr == null) Debug.Log("🚨 LineRenderer 컴포넌트가 필요합니다!");
+        if (lr == null) Debug.LogError("[Lightning] LineRenderer 컴포넌트가 필요합니다.");
         StartCoroutine(AnimateSpriteSheet());
 
         float myBonusSize = 0f;
@@ -77,7 +77,6 @@ public class LightningSkill : SkillEffect
 
         while (currentTarget != null && bounceCount < maxBounces)
         {
-            // 타겟에게 데미지
             currentTarget.TakeDamage(skillDamage, currentTarget.transform.position, knockbackPower);
             hitEnemies.Add(currentTarget);
 
@@ -85,7 +84,6 @@ public class LightningSkill : SkillEffect
             lr.positionCount = linePoints.Count;
             lr.SetPositions(linePoints.ToArray());
 
-            // 💡 [6체인 효과] 번개가 맞은 곳에서 폭발!
             if (chainLevel >= 6)
             {
                 ApplySplashDamage(currentTarget.transform.position, splashRadius);
@@ -103,14 +101,12 @@ public class LightningSkill : SkillEffect
         Destroy(gameObject);
     }
 
-    // 주변 적들에게 폭발 데미지를 주는 함수
     private void ApplySplashDamage(Vector3 center, float radius)
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(center, radius);
         foreach (Collider2D hit in colliders)
         {
             EnemyController enemy = hit.GetComponent<EnemyController>();
-            // 이미 메인 번개에 맞은 적이 아니라면 튕김 데미지의 50%를 줍니다.
             if (enemy != null && !hitEnemies.Contains(enemy))
             {
                 enemy.TakeDamage(skillDamage / 2, center, knockbackPower * 0.5f);

@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 public enum CardType
 {
     ActiveSkill,
@@ -15,10 +15,10 @@ public enum CardRarity
 [CreateAssetMenu(fileName = "New Skill Data", menuName = "Scriptable Object/Skill Data")]
 public class SkillData : ScriptableObject
 {
-    [Header("µîÀå È®·ü (°¡ÁßÄ¡)")]
+    [Header("ë“±ì¥ í™•ë¥  (ê°€ì¤‘ì¹˜)")]
     public int dropWeight = 10;
 
-    [Header("½ºÅ³ ±âº» Á¤º¸")]
+    [Header("ìŠ¤í‚¬ ê¸°ë³¸ ì •ë³´")]
     public CardType cardType;
     public string skillName;
 
@@ -26,15 +26,15 @@ public class SkillData : ScriptableObject
     public string skillDescription;
     public Sprite skillIcon;
 
-    [Header("¾×Æ¼ºê ½ºÅ³ Àü¿ë (CardTypeÀÌ ActiveSkillÀÏ ¶§¸¸ »ç¿ë)")]
+    [Header("ì•¡í‹°ë¸Œ ìŠ¤í‚¬ ì „ìš© (CardTypeì´ ActiveSkillì¼ ë•Œë§Œ ì‚¬ìš©)")]
     public GameObject skillPrefab;
 
-    [Header("ÆĞ½Ãºê ½ºÅÈ Àü¿ë (CardTypeÀÌ PassiveStatÀÏ ¶§¸¸ »ç¿ë)")]
-    public int bonusMaxHP;           // ÃÖ´ë Ã¼·Â Áõ°¡
-    public int bonusDefense;         // ¹æ¾î·Â Áõ°¡ (¹Ş´Â ÇÇÇØ °¨¼Ò)
-    public float bonusMagneticRange; // ÀÚ¼® È¹µæ ¹üÀ§ Áõ°¡
+    [Header("íŒ¨ì‹œë¸Œ ìŠ¤íƒ¯ ì „ìš© (CardTypeì´ PassiveStatì¼ ë•Œë§Œ ì‚¬ìš©)")]
+    public int bonusMaxHP;
+    public int bonusDefense;
+    public float bonusMagneticRange;
 
-    [Header("Æ¯Á¤ ½ºÅ³ Àü¿ë °­È­ (CardTypeÀÌ SkillUpgradeÀÏ ¶§ »ç¿ë)")]
+    [Header("íŠ¹ì • ìŠ¤í‚¬ ì „ìš© ê°•í™” (CardTypeì´ SkillUpgradeì¼ ë•Œ ì‚¬ìš©)")]
     public string targetSkillId;
     public int specificBonusDamage;
     public float specificBonusSize;
@@ -43,9 +43,9 @@ public class SkillData : ScriptableObject
     public float specificBonusTickRate;
     public float specificBonusAngle;
     public float specificBonusKnockback;
-    public int specificBonusSwords; // ÀÌ °­È­ Ä«µå¸¦ ¸ÔÀ¸¸é °Ë °³¼ö Ãß°¡!
-    public float specificBonusRadius; // ÀÌ °­È­ Ä«µå¸¦ ¸ÔÀ¸¸é ¹İ°æ Áõ°¡!
+    public int specificBonusSwords;
+    public float specificBonusRadius;
 
-    [Header("Ä«µå µî±Ş")]
+    [Header("ì¹´ë“œ ë“±ê¸‰")]
     public CardRarity rarity = CardRarity.Normal;
 }

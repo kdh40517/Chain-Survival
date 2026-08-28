@@ -1,9 +1,9 @@
-using System.Collections;
+ï»¿using System.Collections;
 using UnityEngine;
 
 public class ChainManager : MonoBehaviour
 {
-    [Header("ÄÞº¸ ¿¬Ãâ")]
+    [Header("ì½¤ë³´ ì—°ì¶œ")]
     public GameObject comboTextPrefab;
 
     public GameObject[] skillSlots = new GameObject[6];
@@ -26,17 +26,16 @@ public class ChainManager : MonoBehaviour
             float dice = Random.Range(0f, 100f);
             if (dice <= chainProbabilities[i])
             {
-                Debug.Log((i + 1) + "´Ü Ã¼ÀÎ Æø¹ß ¼º°ø ÀåÂøµÈ ½ºÅ³:" + skillSlots[i].name);
+                Debug.Log($"[Chain] {i + 1}ë‹¨ ë°œë™ - {skillSlots[i].name}");
                 if (comboTextPrefab != null)
                 {
-                    // ÇÃ·¹ÀÌ¾î º»Ã¼(transform.position)¿¡¼­ À§·Î(yÃà) 1.5¸¸Å­ ¶ç¿ö¼­ »ý¼º
                     Vector3 textSpawnPos = transform.position + new Vector3(0f, 1.5f, 0f);
                     GameObject textObj = Instantiate(comboTextPrefab, textSpawnPos, Quaternion.identity);
 
                     ComboText comboScript = textObj.GetComponent<ComboText>();
                     if (comboScript != null)
                     {
-                        comboScript.Setup(i + 1); // 0ºÎÅÍ ½ÃÀÛÇÏ´Ï±î +1 ÇØ¼­ "1 Combo", "2 Combo"·Î ¸¸µê
+                        comboScript.Setup(i + 1);
                     }
                 }
                 GameObject newSkill = Instantiate(skillSlots[i], targetPos, Quaternion.identity);
@@ -58,10 +57,9 @@ public class ChainManager : MonoBehaviour
             }
             else
             {
-                Debug.Log((i + 1) + "´Ü Ã¼ÀÎ ¹ßµ¿ ½ÇÆÐ, ¿¬¼â Á¾·á.");
+                Debug.Log($"[Chain] {i + 1}ë‹¨ ì‹¤íŒ¨ - ì—°ì‡„ ì¢…ë£Œ");
                 break;
             }
         }
-
     }
 }

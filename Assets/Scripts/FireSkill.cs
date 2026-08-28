@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+癤퓎sing System.Collections.Generic;
 using UnityEngine;
 
 public class FireSkill : SkillEffect
@@ -12,13 +12,11 @@ public class FireSkill : SkillEffect
     }
     private void Start()
     {
-        // 1. 공용 주머니(글로벌) 스탯 먼저 챙기기
         int myBonusDamage = 0;
         float myBonusSize = 0f;
         float myBonusDuration = 0f;
         float myBonusTickInterval = 0f;
 
-        // 2. 내 이름표(skillId)로 사물함 열어서 싹싹 긁어오기!
         if (GameManager.instance.specificBonusDamage.ContainsKey(skillId))
         {
             myBonusDamage += GameManager.instance.specificBonusDamage[skillId];
@@ -27,16 +25,12 @@ public class FireSkill : SkillEffect
             myBonusTickInterval += GameManager.instance.specificBonusTickRate[skillId];
         }
 
-        // 3. 최종 스탯 적용!
         skillDamage += myBonusDamage;
         float finalSizeScale = 1.0f + (chainLevel - 1) * sizeMultiplierPerLevel + myBonusSize;
         float finalDuration = 1.5f + myBonusDuration;
 
-        // [꿀팁] 타격 간격은 작아질수록 빨리 때립니다! 보너스(myBonusTickInterval)를 빼줍니다. 
-        // Mathf.Max를 써서 아무리 강화해도 0.05초 이하로는 안 내려가게 방어막을 칩니다.
         damageTickRate = Mathf.Max(0.05f, 0.25f - myBonusTickInterval);
 
-        // 4. 눈에 보이는 크기(파티클 & 콜라이더) 키우기
         if (myParticleSystem != null)
         {
             var mainModule = myParticleSystem.main;
@@ -44,9 +38,8 @@ public class FireSkill : SkillEffect
         }
         transform.localScale = new Vector3(finalSizeScale, finalSizeScale, 1f);
 
-        Debug.Log($"[{skillId}] 화염 폭발!! 뎀:{skillDamage} | 크기:{finalSizeScale} | 지속:{finalDuration}초 | 타격간격:{damageTickRate}초");
+        Debug.Log($"[{skillId}] damage={skillDamage} scale={finalSizeScale} duration={finalDuration} tickRate={damageTickRate}");
 
-        // 적용된 지속시간이 끝나면 깔끔하게 소멸!
         Destroy(gameObject, finalDuration);
     }
     private void Update()

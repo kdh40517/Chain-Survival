@@ -1,44 +1,36 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class Reposition : MonoBehaviour
 {
-    [Header("¼³Á¤")]
+    [Header("ì„¤ì •")]
     public Transform player;
 
-    // ¿ì¸®°¡ ÀÏÀÏÀÌ ¼¼Áö ¾Ê±â À§ÇØ À¯´ÏÆ¼ÀÇ ÁÙÀÚ(Äİ¶óÀÌ´õ)¸¦ ¾¹´Ï´Ù!
     private BoxCollider2D coll;
 
     void Start()
     {
-        // ½ÃÀÛÇÒ ¶§ ³» ¸ö¿¡ ´Ş¸° ÁÙÀÚ¸¦ °¡Á®¿É´Ï´Ù.
         coll = GetComponent<BoxCollider2D>();
     }
 
     void Update()
     {
         if (player == null) return;
-        // 1. ÁÙÀÚ¸¦ ÅëÇØ ÀÌ ¸Ê Á¶°¢ÀÇ '°¡·Î ±æÀÌ'¿Í '¼¼·Î ±æÀÌ'¸¦ ¾Ë¾Æ³À´Ï´Ù.
         float sizeX = coll.bounds.size.x;
         float sizeY = coll.bounds.size.y;
 
-        // 2. ÇÃ·¹ÀÌ¾î¿Í ³»(¸Ê Á¶°¢) °Å¸® °è»ê
         float diffX = player.position.x - transform.position.x;
         float diffY = player.position.y - transform.position.y;
 
-        // 3. ¹æÇâ(¿À¸¥ÂÊÀ¸·Î °¬´ÂÁö ¿ŞÂÊÀ¸·Î °¬´ÂÁö) ±¸ÇÏ±â
         float dirX = diffX < 0 ? -1 : 1;
         float dirY = diffY < 0 ? -1 : 1;
 
-        // [ÇÙ½É!] 3x3 ¹è¿­(ÃÑ 9Á¶°¢)ÀÏ ¶§, ÇÃ·¹ÀÌ¾î°¡ ³» °¡·Î ±æÀÌÀÇ 1.5¹è ÀÌ»ó ¸Ö¾îÁö¸é È­¸é ¹ÛÀ¸·Î ³ª°£ °Ì´Ï´Ù.
         if (Mathf.Abs(diffX) > sizeX * 1.5f)
         {
-            // ¸Ê Á¶°¢ 3°³ ±æÀÌ¸¸Å­ ¹İ´ëÆíÀ¸·Î È× ´øÁ®Áİ´Ï´Ù!
             transform.Translate(Vector3.right * dirX * sizeX * 3f);
         }
 
         if (Mathf.Abs(diffY) > sizeY * 1.5f)
         {
-            // ¼¼·Îµµ ¸¶Âù°¡Áö!
             transform.Translate(Vector3.up * dirY * sizeY * 3f);
         }
     }

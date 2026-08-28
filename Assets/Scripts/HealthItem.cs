@@ -1,17 +1,15 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class HealItem : MonoBehaviour
 {
-    [Header("È¸º¹ ¼³Á¤")]
-    public int healAmount = 20; // È¸º¹ÇÒ Ã¼·Â ¾ç
+    [Header("íšŒë³µ ì„¤ì •")]
+    public int healAmount = 20;
 
-    // ÀÚ¼®¿¡ ²ø·Á°¡´Â È¿°ú¿ë
     private Transform targetPlayer;
     private float magnetSpeed = 5f;
 
     private void Update()
     {
-        // ÀÚ¼® ¾ÆÀÌÅÛÀ» ¸Ô¾î¼­ Å¸°ÙÀÌ ¼³Á¤µÇ¸é ÇÃ·¹ÀÌ¾î ÂÊÀ¸·Î ³¯¾Æ°©´Ï´Ù.
         if (targetPlayer != null)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPlayer.position, magnetSpeed * Time.deltaTime);
@@ -19,7 +17,6 @@ public class HealItem : MonoBehaviour
         }
     }
 
-    // ÀÚ¼® ¾ÆÀÌÅÛÀÌ È£ÃâÇÒ ÇÔ¼ö
     public void StartAttraction(Transform playerTransform)
     {
         targetPlayer = playerTransform;
@@ -32,11 +29,9 @@ public class HealItem : MonoBehaviour
             PlayerController player = collision.GetComponent<PlayerController>();
             if (player != null)
             {
-                // ÇÃ·¹ÀÌ¾îÀÇ Ã¼·ÂÀ» È¸º¹½ÃÅ°´Â ÇÔ¼ö È£Ãâ!
                 player.Heal(healAmount);
             }
 
-            // ¸Ô¾úÀ¸´Ï ¾ÆÀÌÅÛ »èÁ¦
             Destroy(gameObject);
         }
     }

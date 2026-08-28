@@ -17,12 +17,11 @@ public class TornadoProjectile : MonoBehaviour
         knockback = knock;
         speed = spd;
         tickRate = tick;
-        moveDirection = dir.normalized; // 발사대가 정해준 방향 기억!
+        moveDirection = dir.normalized;
     }
 
     private void Update()
     {
-        // 기억해둔 방향으로 날아갑니다.
         transform.position += moveDirection * speed * Time.deltaTime;
     }
 
